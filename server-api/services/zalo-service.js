@@ -9,8 +9,10 @@ service.getZaloProfile = (accessToken) => {
         request({
             url: `${API_DOMAIN}/v2.0/me`,
             method: 'GET',
+            headers: {
+                access_token: accessToken
+            },
             qs: {
-                access_token: accessToken,
                 fields: 'id,name,birthday,email,picture'
             },
             json: true
